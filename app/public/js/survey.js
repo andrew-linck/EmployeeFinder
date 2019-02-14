@@ -32,6 +32,7 @@ $(function(){
     
         // If all required fields are filled
         if (validateForm()) {
+    console.log(true);
     
           // Create an object for the user's data
           const userData = {
