@@ -6,8 +6,8 @@ const app = express();
 
 const PORT = 8080;
 
-app.use(express.static(path.join(__dirname, 'public')))
-app.use(bodyparser.urlencoded())
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyparser.urlencoded());
 
 require('./app/routing/htmlRoutes.js')(app);
 require('./app/routing/apiRoutes.js')(app);
