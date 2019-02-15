@@ -19,9 +19,9 @@ $(function(){
         return isValid
     }
 
-    const displayModal = function(data) {
-        $('#match-name').text(data.name);
-        $('#match-img').attr('src', data.photo);
+    const displayModal = function(bestmatch) {
+        $('#match-name').text(bestmatch.name);
+        $('#match-img').attr('src', bestmatch.photo);
 
         // Show the modal with the best match
         $('#results-modal').modal('toggle');

@@ -1,26 +1,36 @@
 const employees = require('../data/employees')
 
-module.exports = function(app) { 
+module.exports = function(app) {
     app.get('/api/employees', function(req, res) {
         res.json(employees);
     });
 
     app.post('/api/employees', function(req, res) {
-        // calculate the best match based off the request body
 
-        const bestMatch = {
-            name: '',
-            photo: '',
-            employeeDifference: Infinity
-        }
+    const bestMatch = {
+        name: '',
+        photo: '',
+        employeeDifference: Infinity
+    }
 
-        const userData = req.body;
+    const userData = req.body;
 
-        employees.push(userData);
+    console.log(userData.scores)
 
-        res.json(bestMatch);
+    employees.forEach(function(employee) {
+        var scores = employee.scores;
+        console.log(scores)
+        // scores.forEach(function(score) {
+        //     var diff = score - userData.scores[i]
+        //     // console.log(diff)
+        // })
+    });
 
-        console.log(userData);
+    employees.push(userData);
+
+    
+    userData.scores
+            res.json(bestMatch);
 
     });
 }
