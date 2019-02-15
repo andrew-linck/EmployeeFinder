@@ -1,36 +1,51 @@
 const employees = require('../data/employees')
 
-module.exports = function(app) {
-    app.get('/api/employees', function(req, res) {
+module.exports = function (app) {
+    app.get('/api/employees', function (req, res) {
         res.json(employees);
     });
 
-    app.post('/api/employees', function(req, res) {
+    app.post('/api/employees', function (req, res) {
 
-    const bestMatch = {
-        name: '',
-        photo: '',
-        employeeDifference: Infinity
-    }
+        const userData = req.body;
 
-    const userData = req.body;
+        const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
-    console.log(userData.scores)
+        const surveyTotal = function (userData) {
+            var userScores = userData.scores;
+            var reducedUserScores = userScores.map(Number)
+            var userSum = reducedUserScores.reduce(reducer)
+            return userSum
+        }
 
-    employees.forEach(function(employee) {
-        var scores = employee.scores;
-        console.log(scores)
-        // scores.forEach(function(score) {
-        //     var diff = score - userData.scores[i]
-        //     // console.log(diff)
-        // })
-    });
+        var userSum = surveyTotal(userData)
+        console.log(`User Sum: ${userSum}`)
 
-    employees.push(userData);
+        // total 
 
-    
-    userData.scores
-            res.json(bestMatch);
+
+        // loop through
+
+        const employeeTotals = function (employees) {
+            employees.forEach(function (employee) {
+                var name = employee.name;
+                var employeeSum = employee.scores.reduce(reducer)
+                var difference = employeeSum - userSum;
+                console.log(`${name}: ${difference}`)
+            });
+        }
+        employeeTotals(employees);
+
+        employees.push(userData);
+
+        const bestMatch = {
+            name: '',
+            photo: '',
+            employeeDifference: Infinity
+        }
+
+
+        res.json(bestMatch);
 
     });
 }
