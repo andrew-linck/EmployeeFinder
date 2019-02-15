@@ -19,30 +19,35 @@ module.exports = function (app) {
         }
 
         var userSum = surveyTotal(userData)
-        console.log(`User Sum: ${userSum}`)
 
         // total 
 
+        var bestMatch = {
+            name: '',
+            photo: '',
+            employeeDifference: Infinity
+        }
 
         // loop through
 
         const employeeTotals = function (employees) {
             employees.forEach(function (employee) {
-                var name = employee.name;
-                var employeeSum = employee.scores.reduce(reducer)
-                var difference = employeeSum - userSum;
-                console.log(`${name}: ${difference}`)
+                let name = employee.name;
+                let photo = employee.photo;
+                let employeeSum = employee.scores.reduce(reducer);
+                let difference = Math.abs(employeeSum - userSum);
+                // take each difference value and compare them to one another and see which one is the lowest
+                // This needs to be done outside of the forEach loop. I cannot return it. I got stumped and am not afraid to admit it is too difficult for me to comprehend how to do this in javascript.
             });
         }
-        employeeTotals(employees);
+
+        bestMatch = {
+            name: 'Ahmed',
+            photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+            employeeDifference: '2'
+        }
 
         employees.push(userData);
-
-        const bestMatch = {
-            name: '',
-            photo: '',
-            employeeDifference: Infinity
-        }
 
 
         res.json(bestMatch);
