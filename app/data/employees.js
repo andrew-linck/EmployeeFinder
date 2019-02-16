@@ -1,8 +1,8 @@
 let employees = 
 [
   {
-    "name":"Ahmed",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "name":"Yobby",
+    "photo":"https://images.pexels.com/photos/462359/pexels-photo-462359.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     "scores":[
         5,
         1,
@@ -17,19 +17,179 @@ let employees =
       ]
   },
   {
-    "name":"Hey",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "name":"Nick",
+    "photo":"https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "scores":[
+        1,
+        2,
+        3,
+        4,
+        4,
+        3,
+        4,
+        3,
+        2,
+        2
+      ]
+  },
+  {
+    "name":"Andrew",
+    "photo":"https://i.imgur.com/GKWnssJ.jpg",
+    "scores":[
+        5,
+        5,
+        5,
+        2,
+        2,
+        2,
+        5,
+        1,
+        1,
+        5
+      ]
+  },
+  {
+    "name":"Santiago",
+    "photo":"https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     "scores":[
         2,
+        3,
+        4,
         2,
-        4,
-        4,
+        5,
         5,
         3,
         2,
+        1,
+        2
+      ]
+  },
+  {
+    "name":"Juan",
+    "photo":"https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "scores":[
+        5,
+        5,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2,
+        4,
+        2
+      ]
+  },
+  {
+    "name":"Tata KooKoo",
+    "photo":"https://images.pexels.com/photos/950780/pexels-photo-950780.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "scores":[
+        2,
+        3,
+        4,
+        5,
+        3,
+        3,
+        2,
+        3,
+        3,
+        1
+      ]
+  },
+  {
+    "name":"Rod",
+    "photo":"https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "scores":[
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        5,
+        1,
+        1,
+        1
+      ]
+  },
+  {
+    "name":"Bert",
+    "photo":"https://images.pexels.com/photos/634007/pexels-photo-634007.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "scores":[
+        1,
+        1,
+        4,
+        3,
+        2,
+        4,
+        5,
         4,
         3,
         1
+      ]
+  },
+  {
+    "name":"Dale",
+    "photo":"https://images.pexels.com/photos/1007864/pexels-photo-1007864.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "scores":[
+        1,
+        1,
+        4,
+        2,
+        5,
+        2,
+        4,
+        4,
+        4,
+        1
+      ]
+  },
+  {
+    "name":"Cool Guy",
+    "photo":"https://images.pexels.com/photos/1081606/pexels-photo-1081606.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "scores":[
+        3,
+        3,
+        4,
+        4,
+        4,
+        5,
+        2,
+        5,
+        3,
+        2
+      ]
+  },
+  {
+    "name":"Mike Will",
+    "photo":"https://images.pexels.com/photos/1437864/pexels-photo-1437864.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "scores":[
+        3,
+        2,
+        3,
+        4,
+        5,
+        3,
+        4,
+        5,
+        3,
+        2
+      ]
+  },
+  {
+    "name":"Super Preacher: Artist: Hitspinner - http://freakingnews.com/stories/stats.asp?uid=20474",
+    "photo":"http://freakingnews.com/pictures/136500/SUPER-PREACHER--136638.jpg",
+    "scores":[
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        2,
+        1,
+        5,
+        5
       ]
   }
 ]

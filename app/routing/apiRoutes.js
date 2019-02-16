@@ -35,6 +35,8 @@ module.exports = function (app) {
             employeeSum = 0;
             employeeSum = employees[i].scores.reduce(reducer);
             employeeRating =  Math.abs(parseInt(userSum) - parseInt(employeeSum));
+
+            // This is the part that I stumbled on. I realized I needed to make my own variable and then have a function check if 
             if (employeeRating<=lowestDifference){
                 lowestDifference=employeeRating;
                 employeeMatch=i;
