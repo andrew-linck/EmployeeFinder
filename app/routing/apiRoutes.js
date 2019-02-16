@@ -1,11 +1,11 @@
 const employees = require('../data/employees')
 
 module.exports = function (app) {
-    app.get('https://employee-find-someone-similar.herokuapp.com/api/employees', function (req, res) {
+    app.get('/api/employees', function (req, res) {
         res.json(employees);
     });
 
-    app.post('https://employee-find-someone-similar.herokuapp.com/api/employees', function (req, res) {
+    app.post('/api/employees', function (req, res) {
 
         const userData = req.body;
 
