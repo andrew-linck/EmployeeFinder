@@ -8,7 +8,7 @@ This project allows you to find someone who wrote similar answers to you
 This is useful because it is connecting people in a positive way
 
 ## Get started
-Click this link [Heroku Deployment](https://www.google.com) 
+Click the link at the top of the repo to try out the survey
 
 ## I am the sole contributor to this project
 If you have questions you can contact me on GitHub
