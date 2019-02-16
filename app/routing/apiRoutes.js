@@ -31,14 +31,14 @@ module.exports = function (app) {
         // Here we loop through all the employee possibilities in the employees data.
         // Logic courtesy of jim-walker on github. I struggled to come up with a solution on my own, so I used his.
 
-        // I did have to use my own pass through for reducing
+        // I did have to use my own pass through for reducing. And I have written notes to clairify how to logic functions
 
         for (let i = 0; i < employees.length; i++) {
             employeeSum = 0; // Goes through array and for each scores it reduces and makes a sum out of them then the rating is oru sum - their sum.
             employeeSum = employees[i].scores.reduce(reducer);
             employeeRating =  Math.abs(parseInt(userSum) - parseInt(employeeSum));
 
-            // When looping through, this sets the employeeMatch to the most recent loop index if the newest employeeRating is lower than the previous. Then the employeeMatch number(which is an index) is used in best match to find the correct employee.
+            // When looping through, this sets the employeeMatch to the most recent loop index (which will be used to find the employee.name in the bestMatch object because the employeeMatch number will match the employee index in our database. If the newest employeeRating that was looped over is lower than the previous (lowestDifference), then the employeeMatch number will change to the index of this most recent loop through which will match the index to find that employee in the employee array.
             if (employeeRating<=lowestDifference){
                 lowestDifference=employeeRating;
                 employeeMatch=i;
