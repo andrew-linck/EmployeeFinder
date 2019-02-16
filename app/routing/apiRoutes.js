@@ -8,9 +8,9 @@ module.exports = function (app) {
     app.post('/api/employees', function (req, res) {
 
         const userData = req.body;
-
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
-
+        
+        // function to total the sum
         const surveyTotal = function (userData) {
             var userScores = userData.scores;
             var reducedUserScores = userScores.map(Number)
@@ -18,39 +18,35 @@ module.exports = function (app) {
             return userSum
         }
 
-        var userSum = surveyTotal(userData)
+        let userSum = surveyTotal(userData)
 
-        // total 
+        // This variable will calculate the difference between the user's scores and the scores of
+        // each user in the employees data
+        let lowestDifference=100;
+        let employeeRating=100;
+        let employeeMatch;
+        let employeeSum = 0;
 
-        var bestMatch = {
-            name: '',
-            photo: '',
-            employeeDifference: Infinity
+
+        // Here we loop through all the employee possibilities in the employees data.
+        // Logic courtesy off jim-walker on github. I struggled to come up with a solution on my own, so I used his.
+
+        for (let i = 0; i < employees.length; i++) {
+            employeeSum = 0;
+            employeeSum = employees[i].scores.reduce(reducer);
+            employeeRating =  Math.abs(parseInt(userSum) - parseInt(employeeSum));
+            if (employeeRating<=lowestDifference){
+                lowestDifference=employeeRating;
+                employeeMatch=i;
+            }
         }
 
-        // loop through
-
-        const employeeTotals = function (employees) {
-            employees.forEach(function (employee) {
-                let name = employee.name;
-                let photo = employee.photo;
-                let employeeSum = employee.scores.reduce(reducer);
-                let difference = Math.abs(employeeSum - userSum);
-                // take each difference value and compare them to one another and see which one is the lowest
-                // This needs to be done outside of the forEach loop. I cannot return it. I got stumped and am not afraid to admit it is too difficult for me to comprehend how to do this in javascript.
-            });
-        }
-
-        bestMatch = {
-            name: 'Ahmed',
-            photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-            employeeDifference: '2'
-        }
-
+        const bestMatch = {
+            'name': employees[employeeMatch].name,
+            'photo': employees[employeeMatch].photo,
+            'difference': employeeRating
+        };
         employees.push(userData);
-
-
         res.json(bestMatch);
-
     });
 }
