@@ -78,3 +78,6 @@ typings/
 # DS_Store
 .DS_Store
 
+# Git Attributes
+.gitattributes
+
