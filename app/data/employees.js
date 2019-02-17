@@ -177,7 +177,7 @@ let employees =
       ]
   },
   {
-    "name":"Super Preacher: Artist: Hitspinner - http://freakingnews.com/stories/stats.asp?uid=20474",
+    "name":"Super Preacher art by Hitspinner on freakingnews.com",
     "photo":"http://freakingnews.com/pictures/136500/SUPER-PREACHER--136638.jpg",
     "scores":[
         4,
