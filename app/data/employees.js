@@ -177,7 +177,7 @@ let employees =
       ]
   },
   {
-    "name":"Super Preacher     art by Hitspinner on freakingnews.com",
+    "name":"Super Preacher... Art by Hitspinner on freakingnews.com",
     "photo":"http://freakingnews.com/pictures/136500/SUPER-PREACHER--136638.jpg",
     "scores":[
         4,
