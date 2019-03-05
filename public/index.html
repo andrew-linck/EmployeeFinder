@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Kudos</title>
+</head>
+<header>
+  <form class="form">
+    <label>From</label>
+    <select>
+      <option>Andrew</option>
+      <option>Devin</option>
+      <option>Will</option>
+      <option>Michael</option>
+      <option>Kevin</option>
+    </select>
+    <label>Title</label>
+    <input>
+    <label>Body</label>
+    <input>
+    <label>To</label>
+    <select>
+        <option>Andrew</option>
+        <option>Devin</option>
+        <option>Will</option>
+        <option>Michael</option>
+        <option>Kevin</option>
+    </select>
+    <input type="submit" class="sendkudos">
+  </form>
+  <div class="kudos">
+    <div>
+      person: Andrew,
+      kudosgiver: Devin,
+      title: Thanks
+      body: You are pretty nice
+    </div>
+  </div>
+</header>
+<body>
+  <script src="./js/jquery.js"></script>
+  <script src="./js/givekudos.js"></script>
+  <script>
+   // create div using jquery. input each returned kudos from database
+   $.ajax({
+      type: "GET",
+      url: "/kudos",
+      success: function(data) {
+        data.forEach(title => {
+          $('.kudos').innerHTML = `<div>title: ${data.title}, body: ${data.body}, author: ${data.author}</div>`
+        });
+      }
+    })
+
+
+    $('.sendkudos').onclick($.ajax({
+      type: "POST",
+      data: $('.form').val().trim(),
+      url: "/kudos",
+      success: function(data) {
+        console.log(data);
+      }
+    }))
+  </script>
+</body>
+</html>

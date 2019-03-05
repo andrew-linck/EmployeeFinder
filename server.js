@@ -1,17 +1,19 @@
 const express = require('express');
-const path = require('path');
-const bodyParser = require('body-parser')
+const mongoose = require('mongoose');
 
+const PORT = process.env.PORT || 3000;
 const app = express();
 
-const PORT = process.env.PORT || 8080;
 
-app.use(express.static(path.join(__dirname, 'app/public')));
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public"));
 
-require('./app/routing/htmlRoutes.js')(app);
-require('./app/routing/apiRoutes.js')(app);
+
+mongoose.connect('mongodb://localhost/kudosapp', { useNewUrlParser: true });
+
+require('./routes/api-routes')(app);
 
 app.listen(PORT, function() {
-    console.log("Listening on port " + PORT);
+  console.log(`App running on port ${PORT}`);
 });
